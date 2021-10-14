@@ -99,25 +99,25 @@ function revert() {
 	echo "Deleting CSR and private key"
 	rm $DIR/$NAME-csr.pem
 	rm $DIR/$NAME-privkey.pem
-	if [ -f $DIR/$NAME-cert.pem ]; then
+	if [ -f $DIR/old/$NAME-cert.pem ]; then
 		echo "Restoring old certificate"
 		mv $DIR/old/$NAME-cert.pem $DIR
 	else
 		echo "ERROR: OLD CERTIFICATE NOT FOUND"
 	fi
-	if [ -f $DIR/$NAME-chain.pem ]; then
+	if [ -f $DIR/old/$NAME-chain.pem ]; then
 		echo "Restoring old chain"
 		mv $DIR/old/$NAME-chain.pem $DIR
 	else
 		echo "ERROR: OLD CHAIN NOT FOUND"
 	fi
-	if [ -f $DIR/$NAME-fullchain.pem ]; then
+	if [ -f $DIR/old/$NAME-fullchain.pem ]; then
 		echo "Restoring old fullchain"
 		mv $DIR/old/$NAME-fullchain.pem $DIR
 	else
 		echo "ERROR: OLD FULLCHAIN NOT FOUND"
 	fi
-	if [ -f $DIR/$NAME-privkey.pem ]; then
+	if [ -f $DIR/old/$NAME-privkey.pem ]; then
 		echo "Restoring old privkey"
 		mv $DIR/old/$NAME-privkey.pem $DIR
 	else
