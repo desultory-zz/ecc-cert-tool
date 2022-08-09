@@ -2,15 +2,15 @@ Use with caution, make sure file is owned by root and has a chmod of 700 unless 
 
 This ONLY works with the cloudflare DNS method
 
-DIR: specifies what directore this program should be run in, useful when being run from cron or another directory
+`DIR`: specifies what directore this program should be run in, useful when being run from cron or another directory
 
-ALGO: algorithm to pass to openssl
+`ALGO`: algorithm to pass to openssl
 
-NAME: domain name for certificate
+`NAME`: domain name for certificate
 
-CLOUDFLARE_EMAIL: email address used for cloudflare
+`CLOUDFLARE_EMAIL`: email address used for cloudflare
 
-CLOUDFLARE_KEY: API key for cloudlare
+`CLOUDFLARE_KEY`: API key for cloudlare
   The api key must have edit access to the domain 
 
 
