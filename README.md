@@ -1,12 +1,20 @@
 Use with caution, make sure file is owned by root and has a chmod of 700 unless you know what you're doing
 
-Config arguments in this file can allow an attacker to OWN your network
-
 This ONLY works with the cloudflare DNS method
 
-You must be using the latest cerbot version, for debian-stretch you must build python3 from source and use pip to install the latest certbot as well as the certbot cloudflare-dns extension
-Installing the latest certbot version from pip with python3.5 WILL break your python3.5 install
-Make sure to use update-alternatives to change your defauly python3 version to the version you built, this was tested on python3.7
+DIR: specifies what directore this program should be run in, useful when being run from cron or another directory
+ALGO: algorithm to pass to openssl
+NAME: domain name for certificate
+CLOUDFLARE_EMAIL: email address used for cloudfloare
+CLOUDFLARE_KEY: API key for cloudlare
+  The api key must have edit access to the domain 
+ 
+It's best to test with debug set to 1 until you are sure this works.
 
+You must install certbot either using your package manager or pip
 
-Certificate revoking is currently borken as LE doesn't support revoking EC certs
+It can be installed with:
+ `apt install certbot`
+
+The cloudflare dns extension can be installed with:
+ `pip install certbot-dns-cloudflare`
